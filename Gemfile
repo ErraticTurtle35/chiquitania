@@ -47,3 +47,8 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'mongoid', git: 'https://github.com/mongodb/mongoid.git', branch: 'master'
+gem 'bson', '~> 4.5'
+gem 'bunny', '>= 2.13.0'
+gem 'sneakers'
