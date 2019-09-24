@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Product name:</strong>
+  <%= @stock_move.product_name %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @stock_move.product_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @stock_move.date %>
+</p>
+
+<p>
+  <strong>Move description:</strong>
+  <%= @stock_move.move_description %>
+</p>
+
+<p>
+  <strong>Uom name:</strong>
+  <%= @stock_move.uom_name %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @stock_move.quantity %>
+</p>
+
+<p>
+  <strong>Product cost:</strong>
+  <%= @stock_move.product_cost %>
+</p>
+
+<%= link_to 'Edit', edit_stock_move_path(@stock_move) %> |
+<%= link_to 'Back', stock_moves_path %>

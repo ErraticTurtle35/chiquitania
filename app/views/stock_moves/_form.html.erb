@@ -1,0 +1,52 @@
+<%= form_with(model: stock_move, local: true) do |form| %>
+  <% if stock_move.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(stock_move.errors.count, "error") %> prohibited this stock_move from being saved:</h2>
+
+      <ul>
+        <% stock_move.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :product_name %>
+    <%= form.text_field :product_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :product_id %>
+    <%= form.number_field :product_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.datetime_select :date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :move_description %>
+    <%= form.text_field :move_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :uom_name %>
+    <%= form.text_field :uom_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantity %>
+    <%= form.text_field :quantity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :product_cost %>
+    <%= form.text_field :product_cost %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
