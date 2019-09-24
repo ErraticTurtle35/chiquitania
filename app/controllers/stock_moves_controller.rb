@@ -1,10 +1,10 @@
 class StockMovesController < ApplicationController
   before_action :set_stock_move, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_stock_moves_by_product, only: [:kardex]
   # GET /stock_moves
   # GET /stock_moves.json
   def index
-    @stock_moves = StockMove.all
+    @stock_moves = StockMove.all.sort({ date: 1})
   end
 
   # GET /stock_moves/1
@@ -19,6 +19,11 @@ class StockMovesController < ApplicationController
 
   # GET /stock_moves/1/edit
   def edit
+  end
+
+  # GET /stock_moves/kardex/:product_id
+  def kardex
+    render json: @stock_moves_by_product
   end
 
   # POST /stock_moves
@@ -71,4 +76,8 @@ class StockMovesController < ApplicationController
     def stock_move_params
       params.require(:stock_move).permit(:product_name, :product_id, :date, :move_description, :uom_name, :quantity, :product_cost)
     end
+
+    def set_stock_moves_by_product
+      @stock_moves_by_product = StockMove.where(product_id: params[:product_id]).sort({ date: 1})
+    end    
 end
