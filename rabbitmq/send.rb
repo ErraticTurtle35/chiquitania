@@ -12,7 +12,8 @@ conn.start
 ch   = conn.create_channel
 move = {
     :product_name => 'Pan',
-    :date => '2019-09-24 08:44:58',
+    :product_id => 1,
+    :date => '2019-09-23 08:44:58',
     :move_description => 'Ingreso',
     :uom_name => 'Unidades',
     :quantity => 1.0,
